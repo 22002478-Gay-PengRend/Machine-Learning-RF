@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[20]:
+# In[18]:
 
 
-import sklearn
 import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
