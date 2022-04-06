@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[29]:
+# In[42]:
 
 
 import sklearn
@@ -53,7 +53,8 @@ input_sitbend = st.slider('Sit and Reach', 0.0, max(data["sit and bend forward_c
 input_situp = st.slider('Sit Ups', 0.0, max(data["sit-ups counts"]), 1.0)
 input_broadjump = st.slider('Standing Broad Jump', 0.0, max(data["broad jump_cm"]), 1.0)
 
-data['gender'] = encoder.fit_transform(data['gender'])
+#data['gender'] = encoder.fit_transform(data['gender'])
+encoder.classes_ = np.load('genders.npy',allow_pickle=True)
 
 if st.button('Make Prediction'):
     input_gender = encoder.transform(np.expand_dims(inp_gender, -1))
@@ -61,13 +62,8 @@ if st.button('Make Prediction'):
         [input_age, int(input_gender), input_height, input_weight, input_fat, input_diastolic, input_systolic, input_grip, input_sitbend, input_situp, input_broadjump], 0)
     prediction = best_randforest_model.predict(inputs)
     print("final pred", np.squeeze(prediction, -1))
+    encoder.classes_ = np.load('classes.npy',allow_pickle=True)
     st.write("Your performance class is: {} ".format(encoder.inverse_transform(prediction)))
 
     st.write(f"Thank you {st.session_state.name}! I hope you can accept it!")
-
-
-# In[ ]:
-
-
-
 
