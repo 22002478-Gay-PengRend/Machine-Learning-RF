@@ -12,14 +12,13 @@ from sklearn import preprocessing
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import preprocessing
-import os
 import pickle
 
 st.header("Body Performance Class Prediction App")
 st.text_input("Enter your Name: ", key="name")
 
 data_path = ['data']
-filepath = os.sep.join(data_path + ['bodyPerformance.csv'])
+filepath = 'data/bodyPerformance.csv'
 data = pd.read_csv(filepath)
 
 filename = 'best_model.pkl'
