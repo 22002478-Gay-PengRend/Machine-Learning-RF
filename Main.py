@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[20]:
+# In[27]:
 
 
 import sklearn
@@ -52,6 +52,8 @@ input_grip = st.slider('Grip Force', 0.0, max(data["gripForce"]), 1.0)
 input_sitbend = st.slider('Sit and Reach', 0.0, max(data["sit and bend forward_cm"]), 1.0)
 input_situp = st.slider('Sit Ups', 0.0, max(data["sit-ups counts"]), 1.0)
 input_broadjump = st.slider('Standing Broad Jump', 0.0, max(data["broad jump_cm"]), 1.0)
+
+data['gender'] = encoder.fit_transform(data['gender'])
 
 if st.button('Make Prediction'):
     input_gender = encoder.transform(np.expand_dims(inp_gender, -1))
