@@ -12,7 +12,6 @@ from sklearn import preprocessing
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import preprocessing
-import pickle
 
 st.header("Body Performance Class Prediction App")
 st.text_input("Enter your Name: ", key="name")
