@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[27]:
+# In[29]:
 
 
 import sklearn
@@ -61,7 +61,7 @@ if st.button('Make Prediction'):
         [input_age, int(input_gender), input_height, input_weight, input_fat, input_diastolic, input_systolic, input_grip, input_sitbend, input_situp, input_broadjump], 0)
     prediction = best_randforest_model.predict(inputs)
     print("final pred", np.squeeze(prediction, -1))
-    st.write("Your performance class is: {} ".format(le.inverse_transform(prediction)))
+    st.write("Your performance class is: {} ".format(encoder.inverse_transform(prediction)))
 
     st.write(f"Thank you {st.session_state.name}! I hope you can accept it!")
 
