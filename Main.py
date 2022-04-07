@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[42]:
+# In[14]:
 
 
 import sklearn
@@ -12,13 +12,14 @@ from sklearn import preprocessing
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import preprocessing
+import os
 import pickle
 
 st.header("Body Performance Class Prediction App")
 st.text_input("Enter your Name: ", key="name")
 
 data_path = ['data']
-filepath = 'data/bodyPerformance.csv'
+filepath = os.sep.join(data_path + ['bodyPerformance.csv'])
 data = pd.read_csv(filepath)
 
 filename = 'best_model.pkl'
@@ -42,15 +43,15 @@ with left_column:
         np.unique(data['gender']))
 
 input_age = st.number_input('Please input Age', min_value=0, max_value=None)
-input_height = st.slider('Height(cm)', 0.0, max(data["height_cm"]), 1.0)
-input_weight = st.slider('Weight(kg)', 0.0, max(data["weight_kg"]), 1.0)
+input_height = st.slider('Height(cm)', 140.0, max(data["height_cm"]), 1.0)
+input_weight = st.slider('Weight(kg)', 40.0, max(data["weight_kg"]), 1.0)
 input_fat = st.slider('body fat %', 0.0, max(data["body fat_%"]), 1.0)
 input_diastolic = st.slider('diastolic reading', 0.0, max(data["diastolic"]), 1.0)
 input_systolic = st.slider('systolic reading', 0.0, max(data["systolic"]), 1.0)
 input_grip = st.slider('Grip Force', 0.0, max(data["gripForce"]), 1.0)
-input_sitbend = st.slider('Sit and Reach', 0.0, max(data["sit and bend forward_cm"]), 1.0)
+input_sitbend = st.slider('Sit and Reach', 100.0, max(data["sit and bend forward_cm"]), 1.0)
 input_situp = st.slider('Sit Ups', 0.0, max(data["sit-ups counts"]), 1.0)
-input_broadjump = st.slider('Standing Broad Jump', 0.0, max(data["broad jump_cm"]), 1.0)
+input_broadjump = st.slider('Standing Broad Jump', 50.0, max(data["broad jump_cm"]), 1.0)
 
 #data['gender'] = encoder.fit_transform(data['gender'])
 encoder.classes_ = np.load('genders.npy',allow_pickle=True)
@@ -65,4 +66,10 @@ if st.button('Make Prediction'):
     st.write("Your performance class is: {} ".format(encoder.inverse_transform(prediction)))
 
     st.write(f"Thank you {st.session_state.name}! I hope you can accept it!")
+
+
+# In[ ]:
+
+
+
 
