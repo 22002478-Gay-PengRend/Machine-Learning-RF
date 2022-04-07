@@ -50,7 +50,7 @@ input_diastolic = st.slider('diastolic reading', 30.0, max(data["diastolic"]), 5
 input_systolic = st.slider('systolic reading', 30.0, max(data["systolic"]), 50.0, 0.1)
 input_grip = st.slider('Grip Force', 0.0, max(data["gripForce"]), 20.0, 0.1)
 input_sitbend = st.slider('Sit and Reach', 50.0, max(data["sit and bend forward_cm"]), 100.0, 0.1)
-input_situp = st.slider('Sit Ups', 0, max(data["sit-ups counts"]), 25, 1)
+input_situp = st.slider('Sit Ups', 0.0, max(data["sit-ups counts"]), 25.0, 1.0)
 input_broadjump = st.slider('Standing Broad Jump', 0.0, max(data["broad jump_cm"]), 100.0, 0.1)
 
 #data['gender'] = encoder.fit_transform(data['gender'])
