@@ -14,6 +14,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn import preprocessing
 import os
 import pickle
+from PIL import Image
 
 st.header("Body Performance Class Prediction App")
 st.text_input("Enter your Name: ", key="name")
@@ -88,6 +89,11 @@ if st.button('Make Prediction'):
     st.write("No offense! This is just for fun!")
     
     st.write(f"Thank you {st.session_state.name} for participating!")
+    
+    if st.checkbox('Show Confusion Matrix'):
+        image = Image.open('Confusion_Matrix.jpg')
+        st.image(image, caption='Confusion Matrix') 
+    
 
 
 # In[ ]:
