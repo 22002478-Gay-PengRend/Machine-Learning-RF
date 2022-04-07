@@ -72,6 +72,7 @@ if st.button('Make Prediction'):
     <style>
     p.a {{
       font: bold {font_size}px Courier;
+      color: red;
     }}
     </style>
     <p class="a">{variable_output}</p>
