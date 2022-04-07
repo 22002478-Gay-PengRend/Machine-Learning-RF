@@ -90,9 +90,9 @@ if st.button('Make Prediction'):
     
     st.write(f"Thank you {st.session_state.name} for participating!")
     
-    if st.checkbox('Show Confusion Matrix'):
-        image = Image.open('Confusion_Matrix.jpg')
-        st.image(image, caption='Confusion Matrix') 
+if st.checkbox('Show Confusion Matrix'):
+    image = Image.open('Confusion_Matrix.jpg')
+    st.image(image, caption='Confusion Matrix') 
     
 
 
