@@ -91,7 +91,7 @@ if st.button('Make Prediction'):
     st.write(f"Thank you {st.session_state.name} for participating!")
     
 if st.checkbox('Show Confusion Matrix'):
-    image = Image.open('http://github.com/22002478-Gay-PengRend/Machine-Learning-RF/blob/main/Confusion_Matrix.JPG')
+    image = Image.open('https://github.com/22002478-Gay-PengRend/Machine-Learning-RF/blob/main/Confusion_Matrix.JPG?raw=true')
     st.image(image, caption='Confusion Matrix') 
     
 
