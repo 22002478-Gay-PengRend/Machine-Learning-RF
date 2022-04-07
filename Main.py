@@ -64,7 +64,7 @@ if st.button('Make Prediction'):
     print("final pred", np.squeeze(prediction, -1))
     encoder.classes_ = np.load('classes.npy',allow_pickle=True)
     
-    variable_output = encoder.inverse_transform(prediction)
+    variable_output = "Your performance class is:" encoder.inverse_transform(prediction)
     font_size = 50
 
     html_str = f"""
