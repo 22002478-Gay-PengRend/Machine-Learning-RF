@@ -92,7 +92,7 @@ if st.button('Make Prediction'):
     
 if st.checkbox('Show Confusion Matrix'):
     image ="https://raw.githubusercontent.com/22002478-Gay-PengRend/Machine-Learning-RF/blob/main/Confusion_Matrix.JPG"
-    st.image(image, caption='Confusion Matrix') 
+    st.image(image, caption='Confusion Matrix', width=350) 
     
 
 
