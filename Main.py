@@ -54,8 +54,14 @@ input_sitbend = st.slider('Sit and Reach', 50.0, max(data["sit and bend forward_
 input_situp = st.slider('Sit Ups', 0.0, max(data["sit-ups counts"]), 25.0, 1.0)
 input_broadjump = st.slider('Standing Broad Jump', 0.0, max(data["broad jump_cm"]), 100.0, 0.1)
 
+    
+if st.checkbox('Show Confusion Matrix'):
+    image ="https://raw.githubusercontent.com/22002478-Gay-PengRend/Machine-Learning-RF/main/Confusion_Matrix.JPG"
+    st.image(image, caption='Confusion Matrix', width=350) 
+
 #data['gender'] = encoder.fit_transform(data['gender'])
 encoder.classes_ = np.load('genders.npy',allow_pickle=True)
+
 
 if st.button('Make Prediction'):
     input_gender = encoder.transform(np.expand_dims(inp_gender, -1))
@@ -89,10 +95,7 @@ if st.button('Make Prediction'):
     st.write("No offense! This is just for fun!")
     
     st.write(f"Thank you {st.session_state.name} for participating!")
-    
-if st.checkbox('Show Confusion Matrix'):
-    image ="https://raw.githubusercontent.com/22002478-Gay-PengRend/Machine-Learning-RF/main/Confusion_Matrix.JPG"
-    st.image(image, caption='Confusion Matrix', width=350) 
+
     
 
 
