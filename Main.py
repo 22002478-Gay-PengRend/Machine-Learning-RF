@@ -69,7 +69,7 @@ if st.button('Make Prediction'):
     st.write("Class B = Great! you are moderately fit!")
     st.write("Class C = Well, you should push yourself a little more")
     st.write("Class D = Please check with your doctor, you are not fit")
-    st.write("No offense! This is just for fun!"))
+    st.write("No offense! This is just for fun!")
     
     st.write(f"Thank you {st.session_state.name}! I hope you can accept it!")
 
