@@ -63,8 +63,14 @@ if st.button('Make Prediction'):
     prediction = best_randforest_model.predict(inputs)
     print("final pred", np.squeeze(prediction, -1))
     encoder.classes_ = np.load('classes.npy',allow_pickle=True)
-    st.write("Your performance class is: {} ".format(encoder.inverse_transform(prediction)))
-
+    st.write("Your performance class is: {} ".format(encoder.inverse_transform(prediction))    
+             
+    st.write("Class A = Best! you are very fit!")   
+    st.write("Class B = Great! you are moderately fit!")
+    st.write("Class C = Well, you should push yourself a little more")
+    st.write("Class D = Please check with your doctor, you are not fit")
+    st.write("No offense! This is just for fun!"))
+    
     st.write(f"Thank you {st.session_state.name}! I hope you can accept it!")
 
 
